@@ -7,8 +7,9 @@ from selenium.webdriver.common.action_chains import ActionChains as Actions
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
 
+apikey = "" # PUT YOUR API KEY HERE. Example: apikey = "A4Fg2sf1edgRw-wQgrq2efwq"
+
 def main():
-    apikey = "" # PUT YOUR API KEY HERE. Example: apikey = "A4Fg2sf1edgRw-wQgrq2efwq"
 
     if apikey == "":
         print("I use the Google API. To make this program work, follow these steps:\nGo to https://console.cloud.google.com\nCreate a project\nEnable the geocode API\nLink a billing account to your project\nCreate an API key\nCopy that key and paste it in the code where it says PUT YOUR API KEY HERE")
@@ -21,7 +22,6 @@ def main():
     print("For this program to work, you must have urllib, requests, and selenium (with the chrome webdriver installed). You can install all of these with the exception of the webdriver using pip (https://pip.pypa.io). To install the webdriver, please visit https://sites.google.com/a/chromium.org/chromedriver/ and follow the getting started instructions.")
 
     latitude,longitude = latlong(input("Please enter a location (city, state, address): "))
-    latitude,longitude = latlong("Nashville")
 
     if latitude == "fail" and longitude == "fail":
        print("I couldn't find that location, please try a new location")
